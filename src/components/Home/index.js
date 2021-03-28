@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {SafeAreaView, Text} from 'react-native';
-import fetchInitialDeals from '../../ajax';
+import {fetchInitialDeals} from '../../ajax';
 import DealList from '../DealList';
 import {style} from './styles';
 
-const Home = () => {
+const Home = ({navigation}) => {
   const [deals, setDeals] = useState([]);
 
   const fetchDeals = async () => {
@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <SafeAreaView style={style.container}>
       {deals.length > 0 ? (
-        <DealList deals={deals} />
+        <DealList deals={deals} navigation={navigation} />
       ) : (
         <Text style={style.header}>Hello Bakesale</Text>
       )}

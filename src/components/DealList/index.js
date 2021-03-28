@@ -2,12 +2,23 @@ import React from 'react';
 import {FlatList, SafeAreaView} from 'react-native';
 import DealItem from '../DealItem';
 
-const DealList = ({deals}) => {
+const DealList = ({deals, navigation}) => {
+  const handlePress = item => () => {
+    navigation.navigate('Details', {deal: item});
+  };
   return (
     <SafeAreaView>
       <FlatList
         data={deals}
-        renderItem={({item}) => <DealItem deal={item} />}
+        renderItem={({item}) => (
+          <DealItem
+            deal={item}
+            // onPress={() => {
+            //   navigation.navigate('Details', {deal: item});
+            // }}
+            onPress={handlePress(item)}
+          />
+        )}
       />
     </SafeAreaView>
   );
