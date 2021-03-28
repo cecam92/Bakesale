@@ -19,4 +19,14 @@ const fetchDetail = async dealId => {
     console.error(err);
   }
 };
-export {fetchInitialDeals, fetchDetail};
+
+const fetchDealsSearchResults = async SearchTerm => {
+  try {
+    const response = await fetch(`${API}/api/deals?searchTerm=` + SearchTerm);
+    const json = await response.json();
+    return json;
+  } catch (err) {
+    console.error(err);
+  }
+};
+export {fetchInitialDeals, fetchDetail, fetchDealsSearchResults};

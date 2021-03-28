@@ -1,13 +1,7 @@
 import {StyleSheet} from 'react-native';
 
 export const style = StyleSheet.create({
-  deal: {
-    marginHorizontal: 12,
-    marginVertical: 12,
-    borderColor: '#bbb',
-    borderWidth: 1,
-    borderTopWidth: 0,
-  },
+  deal: {},
   image: {
     width: '100%',
     height: 150,

@@ -11,13 +11,7 @@ const DealList = ({deals, navigation}) => {
       <FlatList
         data={deals}
         renderItem={({item}) => (
-          <DealItem
-            deal={item}
-            // onPress={() => {
-            //   navigation.navigate('Details', {deal: item});
-            // }}
-            onPress={handlePress(item)}
-          />
+          <DealItem deal={item} onPress={handlePress(item)} />
         )}
       />
     </SafeAreaView>
